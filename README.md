@@ -47,11 +47,16 @@ and install it with
         APNS.port = 2195 
         # this is also the default. Shouldn't ever have to set this, but just in case Apple goes crazy, you can.
         
-        APNS.pem  = '/path/to/pem/file'
         # this is the file you just created
+        ~~APNS.pem  = '/path/to/pem/file'~~
+        APNS.pems   = { live:       '/path/to/alpha/build/pem',
+                        enterprise: '/path/to/beta/build/pem' }
         
-        APNS.pass = ''
-        # Just in case your pem need a password
+        # Just in case your pem needs a password
+        ~~APNS.pass = ''~~
+        APNS.passes = { live:       'mammoth',
+                        enterprise: 'mammoth' }
+        
 
 ### Usage
 

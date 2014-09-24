@@ -40,22 +40,20 @@ and install it with
 
 3. After you have created your ``pem`` file. Set the host, port and certificate file location on the APNS class. You just need to set this once:
 
-        APNS.host = 'gateway.push.apple.com' 
         # gateway.sandbox.push.apple.com is default and only for development
         # gateway.push.apple.com is only for production
+        APNS.host = 'gateway.push.apple.com' 
         
-        APNS.port = 2195 
         # this is also the default. Shouldn't ever have to set this, but just in case Apple goes crazy, you can.
+        APNS.port = 2195 
         
-        # this is the file you just created
-        ~~APNS.pem  = '/path/to/pem/file'~~
-        APNS.pems   = { live:       '/path/to/alpha/build/pem',
-                        enterprise: '/path/to/beta/build/pem' }
+        # associate each PEM file with a unique key
+        APNS.pems   = { build_name1:       '/path/to/alpha/build/pem',
+                        build_name2: '/path/to/beta/build/pem' }
         
-        # Just in case your pem needs a password
-        ~~APNS.pass = ''~~
-        APNS.passes = { live:       'mammoth',
-                        enterprise: 'mammoth' }
+        # if PEM needs a password (optional)
+        APNS.passes = { build_name1: 'password',
+                        build_name2: 'password' }
         
 
 ### Usage
